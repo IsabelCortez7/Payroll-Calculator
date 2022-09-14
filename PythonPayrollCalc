@@ -1,0 +1,20 @@
+name = input("Employee name: ")
+hours = float(input("Hours worked: "))
+pay = float(input("Hourly pay rate: "))
+
+if hours > 40:
+    gross_pay = (((hours - 40) * (1.5)) + (hours * pay))
+    print(f'Overtime pay: {(hours - 40) * 1.5: 2.2f}')
+    print(f'Gross pay: {((hours - 40) * 1.5) + (hours * pay): 2.2f}')
+if hours <= 40:
+    gross_pay = (hours * pay)
+    print(f'Gross pay: {(hours * pay): 2.2f}')
+
+fed=(gross_pay * 0.1)
+state=(gross_pay * .03)
+fica=(gross_pay * .07)
+
+print(f'Federal taxes: {gross_pay * 0.1: 2.2f}')
+print(f'State taxes: {gross_pay * 0.03: 2.2f}')
+print(f'FICA taxes: {gross_pay * 0.07: 2.2f}')
+print(f'Your net pay: {(gross_pay-(fed+state+fica)): 2.2f}')
